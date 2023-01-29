@@ -2,19 +2,17 @@
 #NoTrayIcon
 
 PrintScreen::
+    IfWinExist SnippingTool.exe
+    {
+        WinActivate SnippingTool.exe
+    }
+    else
+    {
+        Run SnippingTool.exe
+        WinActivate SnippingTool.exe
+    }
 
-
-IfWinExist SnippingTool.exe
-{
-    WinActivate SnippingTool.exe
-}
-else
-{
-    Run SnippingTool.exe
-    WinActivate SnippingTool.exe
-}
-
-sleep, 500
-Send, ^n
+    sleep, 500
+    Send, ^n
 
 Return
