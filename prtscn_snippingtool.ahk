@@ -1,18 +1,13 @@
 #SingleInstance force
 #NoTrayIcon
 
-PrintScreen::
-    IfWinExist SnippingTool.exe
-    {
-        WinActivate SnippingTool.exe
+PrintScreen:: {
+    if WinExist("ahk_exe SnippingTool.exe") {
+        WinActivate("ahk_exe SnippingTool.exe")
+    } else {
+        Run("SnippingTool.exe")
+        WinActivate("ahk_exe SnippingTool.exe")
     }
-    else
-    {
-        Run SnippingTool.exe
-        WinActivate SnippingTool.exe
-    }
-
-    sleep, 500
-    Send, ^n
-
-Return
+    Sleep(500)
+    Send('^n')
+}
