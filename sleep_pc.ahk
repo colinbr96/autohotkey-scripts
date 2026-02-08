@@ -1,7 +1,7 @@
 #SingleInstance force
 #NoTrayIcon
 
-^!s:: ; Ctrl + Alt + S
+^!q:: ; Ctrl + Alt + Q
 {
     DllCall("PowrProf\SetSuspendState", "int", 0, "int", 0, "int", 0)
 }
